@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+<div style="margin-left: 10%;margin-right: 10%;">
+    <form method="post" action="/register/">
+        {% csrf_token %}
+<div class="mb-3">
+    <label style="color: lavenderblush;" for="name" class="form-label">Full Name</label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Enter the name in your ID" required>
+  </div>
+  <div class="mb-3">
+    <label style="color: lavenderblush;" for="srn" class="form-label">SRN</label>
+    <input type="text" class="form-control" id="srn" name="srn" placeholder="Enter the id no. which discloses your batch and branch" required>
+  </div>
+  <div class="mb-3">
+    <label style="color: lavenderblush ;" for="prn" class="form-label">PRN</label>
+    <input type="text" class="form-control" name="prn" id="prn" placeholder="Enter the one which is behind your ID " required>
+  </div>
+  <div class="mb-3">
+    <label style="color: lavenderblush ;" for="email" class="form-label">Email id</label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="The one which you use for mail rather than cloud storage" required>
+  </div>
+  <div class="mb-3">
+    <label style="color: lavenderblush ;" for="reason" class="form-label">Why do you think you should be selected</label>
+    <textarea type="text" class="form-control" name="reason" id="reason" placeholder="Don't just spam us with exaggerated experience if you are a fresher(few other too :/) " required></textarea>
+  </div>
+  <div>
+  <button type="submit" class="btn btn-outline-info">Submit</button>
+  </div>
+    </form>
+</div>
+
+
+{% endblock body %}
